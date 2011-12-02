@@ -35,11 +35,11 @@
 /* Heading font-size and line-heights */
 @h1-fs: 2em;
 @h1-lh: 1.5em;
-@h2-fs: 1.5em;
+@h2-fs: 1.9em;
 @h2-lh: @h1-lh;
-@h3-fs: 1.3em;
-@h3-lh: @h2-lh;
-@h4-fs: 1.1em;
+@h3-fs: 1.1em;
+@h3-lh: 1.2em;
+@h4-fs: 1em;
 @h4-lh: @h3-lh;
 @h5-fs: @h4-fs;
 @h5-lh: @h4-lh;
@@ -52,10 +52,10 @@
 //@font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
 //@font-family: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
 //@font-family: Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
-//@font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
+@font-family-heading: Georgia, "Times New Roman", "DejaVu Serif", serif;
 //@font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
 //@font-family: Tahoma, Verdana, "DejaVu Sans", sans-serif;
-//@font-family: Helvetica, Arial, "Nimbus Sans L", sans-serif;
+@font-family: Helvetica, Arial, "Nimbus Sans L", sans-serif;
 //@font-family: Arial, Helvetica, "Nimbus Sans L", sans-serif;
 //@font-family: "Courier New", "DejaVu Sans Mono", monospace;
 
@@ -63,9 +63,10 @@
  * Color section
  */
 @white: #fff;
-@black: #000;
+@black: #333333;
 @blue: #0000ee;
-@visited: #880088;
+@red: #B02000;
+@visited: #9e1d00;
 
 /* An example color sheme:
 @l-brown: #d1c6ae;
@@ -88,7 +89,7 @@
 */
 
 /* Background colors. By default, the inner items inherits our parent's color*/
-@body-clr: @white; //Body backgroundcolor;
+@body-clr: transparent; //Body backgroundcolor;
 @page-clr: @body-clr; //Page background eg. if page width 960px, use this the background color of 960px section;
 @content-clr: @page-clr; // Background color of real content
 //@block-clr: @content-clr; //An example, use this eg. in sidebar contents
@@ -101,11 +102,11 @@
 @h5-clr: @h4-clr;
 @h6-clr: @h5-clr;
 
-@a-link: @blue;
+@a-link: @red;
 @a-visited: @visited;
-@a-hover: @a-link;
-@a-focus: @a-hover;
-@a-active: @a-hover;
+@a-hover: @visited;
+@a-focus: @visited;
+@a-active: @visited;
 
 /* The default margin size. If you want to use different value on default vertical or horizontal margin, change v-margin or h-margin value.*/
 @margin: 1em;
@@ -131,18 +132,18 @@
   //@sprite-image: url(../images/sprite.png);
 
 /* Button defaults @see css-button */
-@button-bg: #eeeeee; //background color
-@button-bg-hover: #eeeeff; // background color on hover
-@button-clr: @black; // text color on button
-@button-clr-hover: @button-clr; // text color on hover state
-@button-v-padding: 6px; //Left and right padding of button
-@button-h-padding: 0; //Top and bottom padding of button
-@button-radius: @margin-px; // Border radius on button
-@button-border-clr: #797775; // Border color around the button
+@button-bg: @red; //background color
+@button-bg-hover: @visited; // background color on hover
+@button-clr: @white; // text color on button
+@button-clr-hover: @white; // text color on hover state
+@button-v-padding: 10px; //Left and right padding of button
+@button-h-padding: 1px; //Top and bottom padding of button
+@button-radius: 2px; // Border radius on button
+@button-border-clr: transparent; // Border color around the button
 
 /* Tab defaults @see tab-style */
-@tab-bg: #ddd; //background color
-@tab-bg-hover: #eeeeff; // background color on hover
+@tab-bg: @red; //background color
+@tab-bg-hover: @visited; // background color on hover
 @tab-clr: @black; // text color on tab
 @tab-clr-hover: @button-clr; // text color on hover state
 @tab-height: 25px; // height of tab

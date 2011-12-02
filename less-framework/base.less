@@ -13,9 +13,21 @@
 @import "helpers.less";
 @import "drupal-helpers.less";
 
+ffhead {
+  ff(@font-family-heading);
+}
+
+css-button {
+  noborder;
+  italic;
+  fslh(16px);
+  alignc;
+  ffhead;
+}
+
 /* Uncomment this to change default buttons to css buttons */
 input[type="submit"], button {
-  //css-button;
+  css-button;
 }
 
 /* Examle usage of extending button class */
@@ -32,6 +44,8 @@ blue-button {
 triangle-right {
   triangle-right(@visited; 5px; 5px; 10px);
 }
+
+
 
 //These should be at the end of this file to apply your overrides
 @import "html-elements.less"; //Initialize html-defaults

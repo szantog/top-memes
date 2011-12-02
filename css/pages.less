@@ -15,6 +15,7 @@
 body {
   margin: 0;
   padding: 0;
+  background: url("../images/bg.png") repeat scroll 0 0 #F9F9F9;
 }
 
 #page-wrapper {
@@ -177,6 +178,12 @@ ul.links.inline {
 
 ul.links li {
   padding: 0 1em 0 0; /* LTR */
+  &.node-readmore {
+    css-button;
+    a {
+      link(@white; @white; @white; @white);
+    }
+  }
 }
 
 .item-list .pager /* A list of page numbers when more than 1 page of content is available */ {

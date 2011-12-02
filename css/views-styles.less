@@ -5,72 +5,9 @@
 
 @import "../less-framework/base.less";
 
-@width: 120px;
-
-block (@x: @width) {
-  width: @x;
-}
-
-// Ez egy 120px-es block
-.ez-egy-block-div {
-  block;
-}
-
-// Ez egy 300px-es block
-.ez-egy-szeles-block-div {
-  block(300px);
-
-  .div-inner {
-
-    ul {
-
-      li {
-
-        a {
-
-          &:hover {
-
-          };
-        }
-      }
-    }
+.views-view-grid {
+  td {
+    alignc;
+    vertical-align: top;
   }
-}
-
-//css-ben
-.ez-egy-szeles-block-div {
-
-}
-
-.ez-egy-szeles-block-div .div-inner {
-
-}
-
-.ez-egy-szeles-block-div .div-inner ul {
-
-}
-
-.ez-egy-szeles-block-div .div-inner ul li {
-
-}
-.ez-egy-szeles-block-div .div-inner ul li a {
-
-}
-
-.ez-egy-szeles-block-div .div-inner ul li a: hover {
-
-}
-
-@the-border: 1px;
-@base-color: #111;
-@red:        #842210;
-
-#header {
-  color: @base-color * 3;
-  border-left: @the-border;
-  border-right: @the-border * 2;
-}
-#footer {
-  color: @base-color + #003300;
-  border-color: desaturate(@red, 10%);
 }

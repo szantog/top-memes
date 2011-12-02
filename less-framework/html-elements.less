@@ -65,9 +65,11 @@ fieldset {margin(@block-level-line-height 0);}
 h1 {
   fs(@h1-fs);
   lh(@h1-lh);
-  bold;
   color: @h1-clr;
   margin(@line-height / @h1-fs 0);
+  italic;
+  ffhead;
+  fwnormal;
 }
 
 h2 {
@@ -75,6 +77,9 @@ h2 {
   lh(@h2-lh);
   color: @h2-clr;
   margin(@line-height / @h2-fs 0);
+  italic;
+  ffhead;
+  fwnormal;
 }
 
 h3 {
@@ -82,6 +87,9 @@ h3 {
   lh(@h3-lh);
   color: @h3-clr;
   margin(@line-height / @h3-fs 0);
+  italic;
+  ffhead;
+  fwnormal;
 }
 
 h4 {
@@ -89,6 +97,8 @@ h4 {
   lh(@h4-lh);
   color: @h4-clr;
   margin(@line-height / @h4-fs 0);
+  italic;
+  ffhead;
 }
 
 h5 {
@@ -96,6 +106,8 @@ h5 {
   lh(@h5-lh);
   color: @h5-clr;
   margin(@line-height / @h5-fs 0);
+  italic;
+  ffhead;
 }
 
 h6 {
@@ -103,6 +115,8 @@ h6 {
   lh(@h6-lh);
   color: @h6-clr;
   margin(@line-height / @h6-fs 0);
+  italic;
+  ffhead;
 }
 
 /*
@@ -130,7 +144,7 @@ dd {
  */
 table {
   border-collapse: collapse;
-  /* width: 100%; */ /* Prevent cramped-looking tables */
+  width: 100%; */ /* Prevent cramped-looking tables */
 
   th,
   thead th,
@@ -163,6 +177,10 @@ table {
   }
 
   td {
+  }
+
+  h2, h3 {
+    mtop(0);
   }
 }
 
@@ -206,8 +224,8 @@ button {
  * @see link in helpers.less, and set link colors in settings.less
  */
 a {
-  underline;
   link;
+  tdnone;
 }
 
 /*
