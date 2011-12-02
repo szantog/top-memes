@@ -1,0 +1,38 @@
+
+/**
+ * @file
+ * The basic file, you need to use and import into every other less file in youre theme.
+ * Here should you override anything in core.less, define your own reusable classes,
+ * create your own eg. sprite declarations.
+ */
+
+@import "settings.less";
+@import "drupal-settings.less";
+@import "core.less";
+@import "css3.less";
+@import "helpers.less";
+@import "drupal-helpers.less";
+
+/* Uncomment this to change default buttons to css buttons */
+input[type="submit"], button {
+  //css-button;
+}
+
+/* Examle usage of extending button class */
+blue-button {
+  css-button(@blue; @white; @white; @blue);
+}
+
+/* We want to use the blue-button decalaration as class */
+.blue-button {
+  blue-button;
+}
+
+/* Examle triangle initialization */
+triangle-right {
+  triangle-right(@visited; 5px; 5px; 10px);
+}
+
+//These should be at the end of this file to apply your overrides
+@import "html-elements.less"; //Initialize html-defaults
+@import "classes.less"; // Initalize classes based on mixing, then you should use mixings as html classes

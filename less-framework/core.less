@@ -1,0 +1,115 @@
+
+/**
+ * @file
+ * The core of Less Framework. By default, never need to modify this, only on bugfix
+ * This contains basic css aliases mixings
+ */
+
+/* Block aliases */
+block {display: block;}
+inline-block {display: inline-block;}
+inline {display: inline;}
+nodisplay {display: none;}
+
+/* Clearing aliases */
+clr {clear: both; display: block;}
+clrl {clear: left;}
+clrr {clear: right;}
+noclr {clear: none;}
+
+/*
+ * Float the element, and add a default margin to the right side
+ * The default margin could override: .left(0 12px 12px 0)
+ * @var: The margin of floated element
+ */
+left(@var: @float-left-default;) {float: left; margin: @var;}
+right(@var: @float-right-default;) {float: right ; margin: @var;}
+
+/* Position aliases */
+absolute {position: absolute;}
+absolutetl(@x: 0; @y: 0;) {position: absolute; top: @x; left: @y};
+absolutetr(@x: 0; @y: 0;) {position: absolute; top: @x; right: @y};
+absolutebl(@x: 0; @y: 0;) {position: absolute; bottom: @x; left: @y};
+absolutebr(@x: 0; @y: 0;) {position: absolute; bottom: @x; right: @y};
+relative {position: relative;}
+static {position: static;}
+
+/**
+ * Short font styles
+ *
+ * Usage: fs(16px) //It makes 16px font-size.
+ *        lh(20px) //It makes 20px line-height.
+ *        fslh(20px; 5px) //It makes 20px font size with 20px + 5px = 25px line height;
+ */
+fs (@var: @font-size;) {font-size: @var;}
+ff (@var: @font-family;) {font-family: @var;}
+lh (@var: @line-height;) {line-height: @var;}
+fslh (@var: @font-size; @lh-offset: 4px) {font-size: @var; line-height: @var + @lh-offset;}
+
+bold {font-weight: bold;}
+bolder {font-weight: bolder;}
+lighter {font-weight: lighter;}
+fwinherit {font-weight: inherit;}
+fwnormal {font-weight: normal;}
+
+italic {font-style: italic;}
+oblique {font-style: oblique;}
+fsnormal {font-style: normal;}
+
+underline {text-decoration: underline;}
+tdnone {text-decoration: none;}
+
+alignl {text-align: left;}
+alignr {text-align: right;}
+alignc {text-align: center;}
+
+uppercase {text-transform: uppercase;}
+lowercase {text-transform: lowercase;}
+ttnone {text-transform: none;}
+
+// Reset all font-styles to default
+fsreset {fs; lh; fwnormal; fsnormal; tdnone; alignl; ttnone;}
+
+
+/**
+ * Margins/paddings
+ * It makes margin @margin, if parameter isn't added.
+ * Usage: margin(16px) //It makes 16px margin.
+ *        mtop // It makes a default size margin at the top
+ *        nomargin //Set margin to 0.
+ */
+margin(@var: @margin;) {margin: @var;}
+mtop(@var: @h-margin;) {margin-top: @var;}
+mbottom(@var: @h-margin;) {margin-bottom: @var;}
+mleft(@var: @v-margin;) {margin-left: @var;}
+mright(@var: @v-margin;) {margin-right: @var;}
+nomargin {margin: 0;}
+
+padding (@var: @margin;) {padding: @var;}
+ptop (@var: @h-margin;) {padding-top: @var;}
+pbottom (@var: @h-margin;) {padding-bottom: @var;}
+pleft (@var: @v-margin;) {padding-left: @var;}
+pright (@var: @v-margin;) {padding-right: @var;}
+nopadding {padding: 0;}
+
+nomarding {margin: 0; padding: 0;}
+
+/*
+ * Borders
+ */
+noborder {border: none;}
+
+/*
+ * Backgrounds
+ */
+nobg {background: none;}
+
+/*
+ * A basic grid system
+ * Normally never need to use
+ */
+alpha {margin-left: 0;}
+omega {margin-right: 0;}
+container {margin-left: auto; margin-right: auto; width: @page-width;}
+
+

@@ -1,0 +1,65 @@
+
+/**
+ * @file
+ * Drupal helpers
+ */
+
+block {
+  h2 {
+    a {
+    }
+  }
+
+  .content {
+    ul {
+    }
+
+    li {
+    }
+
+    a {
+    }
+  }
+}
+
+list {
+  // The first level of list;
+  margin(@block-level-line-height 0);
+  padding(0 0 0 @list-indent); /* LTR */
+  list-style-type: disc;
+
+  li,
+  &.menu li {
+    nomarding;
+  }
+
+  // The second level of list
+  ul,
+  ol {
+    nomargin;
+  }
+
+  ul {
+    list-style-type: circle;
+
+    ul {
+      list-style-type: square;
+
+      ul {
+        list-style-type: circle;
+      }
+    }
+  }
+
+  ol {
+    list-style-type: decimal;
+
+    ol {
+      list-style-type: lower-alpha;
+
+      ol {
+        list-style-type: decimal;
+      }
+    }
+  }
+}

@@ -1,0 +1,263 @@
+
+/**
+ * @file
+ * HTML Element Styling
+ *
+ * This based on linked articles. By default settings.less this is a standard html-reset.until you start customize it
+ *
+ * @see http://meiert.com/en/blog/20080419/reset-style-sheets-are-bad/
+ * @see http://snook.ca/archives/html_and_css/no_css_reset/
+ */
+
+body {
+  font-size: 100%; /* Fixes exaggerated text resizing in IE6 and IE7 */
+}
+
+/*
+ * The first div within body, where the default font parameters need to set.
+ */
+#skip-to-nav,
+#page {
+  fs;
+  lh;
+}
+
+pre {monospace;}
+code {monospace;}
+kbd {monospace;}
+samp {monospace;}
+tt {monospace;}
+var {monospace;}
+
+body {ff;}
+caption {ff;}
+th {ff;}
+td {ff;}
+input {ff;}
+textarea {ff;}
+select {ff;}
+option {ff;}
+legend {ff;}
+fieldset {ff;}
+
+/*
+ * Block-level elements
+ */
+h1 {margin(@block-level-line-height 0);}
+h2 {margin(@block-level-line-height 0);}
+h3 {margin(@block-level-line-height 0);}
+h4 {margin(@block-level-line-height 0);}
+h5 {margin(@block-level-line-height 0);}
+h6 {margin(@block-level-line-height 0);}
+p {margin(@block-level-line-height 0);}
+blockquote {margin(@block-level-line-height 0);}
+pre {margin(@block-level-line-height 0);}
+ul {margin(@block-level-line-height 0);}
+ol {margin(@block-level-line-height 0);}
+dl {margin(@block-level-line-height 0);}
+hr {margin(@block-level-line-height 0);}
+table {margin(@block-level-line-height 0);}
+fieldset {margin(@block-level-line-height 0);}
+
+/*
+ * Headings
+ */
+h1 {
+  fs(@h1-fs);
+  lh(@h1-lh);
+  bold;
+  color: @h1-clr;
+  margin(@line-height / @h1-fs 0);
+}
+
+h2 {
+  fs(@h2-fs);
+  lh(@h2-lh);
+  color: @h2-clr;
+  margin(@line-height / @h2-fs 0);
+}
+
+h3 {
+  fs(@h3-fs);
+  lh(@h3-lh);
+  color: @h3-clr;
+  margin(@line-height / @h3-fs 0);
+}
+
+h4 {
+  fs(@h4-fs);
+  lh(@h4-lh);
+  color: @h4-clr;
+  margin(@line-height / @h4-fs 0);
+}
+
+h5 {
+  fs(@h5-fs);
+  lh(@h5-lh);
+  color: @h5-clr;
+  margin(@line-height / @h5-fs 0);
+}
+
+h6 {
+  fs(@h6-fs);
+  lh(@h6-lh);
+  color: @h6-clr;
+  margin(@line-height / @h6-fs 0);
+}
+
+/*
+ * Lists
+ */
+ul,
+ol,
+.item-list ul {
+  list;
+}
+
+dt {
+  nomarding;
+}
+
+dd {
+  margin(0 0 0 2em);
+  nopadding;
+}
+
+/*
+ * Tables
+ * Drupal provides table styling which is only useful for its admin section
+ * forms, so we override this default CSS. (We set it back in forms.css.)
+ */
+table {
+  border-collapse: collapse;
+  /* width: 100%; */ /* Prevent cramped-looking tables */
+
+  th,
+  thead th,
+  tbody th {
+    alignl; /* LTR */
+    nopadding;
+    border-bottom: none;
+  }
+
+  tbody {
+    border-top: none;
+  }
+
+  thead {
+  }
+
+  tfoot {
+  }
+
+  caption {
+  }
+
+  colgroup {
+  }
+
+  col {
+  }
+
+  tr {
+  }
+
+  td {
+  }
+}
+
+/*
+ * Forms
+ */
+form {
+  nomarding;
+}
+
+fieldset {
+  padding(0.5em);
+}
+
+legend {
+}
+
+label {
+}
+
+input {
+}
+
+select {
+}
+
+optgroup {
+}
+
+option {
+}
+
+textarea {
+}
+
+button {
+}
+
+/*
+ * Links
+ * @see link in helpers.less, and set link colors in settings.less
+ */
+a {
+  underline;
+  link;
+}
+
+/*
+ * Other inline elements
+ */
+img {
+  border: 0;
+  /* vertical-align: bottom; */ /* Suppress the space beneath the baseline */
+}
+
+abbr, /* Abbreviations */
+acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+  white-space: nowrap;
+}
+
+q {
+}
+
+cite {
+}
+
+strong, b {
+}
+
+em, i {
+}
+
+code,
+kbd,
+samp,
+tt,
+var /* Code, keyboard input, sample output, teletype, variable */ {
+}
+
+del {
+}
+
+ins {
+}
+
+big {
+}
+
+small {
+}
+
+sub {
+}
+
+sup {
+}

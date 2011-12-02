@@ -1,0 +1,167 @@
+
+/**
+ * @file
+ * The basic file, you need to use and import into every other less file in youre theme.
+ * Here should you override anything in core.less, define your own reusable classes,
+ * create your own eg. sprite declarations.
+ * Collection of global variables.
+ */
+
+/* The base font-size */
+//@todo: create order, where need to use px, where the em
+@font-size-px: 16px;
+@line-height-px: 19px;
+@font-size: 1em;
+@line-height: 1.1875em;
+
+@small: @font-size * 0.8125;
+@big: @font-size * 1.125;
+
+/* Uncomment to choose a default font size and line-height */
+
+/* Use a 12px base font size with a 16px line height */
+//@font-size: 0.75em; /* 16px x .75 = 12px */
+//@line-height: 1.333em;  /* 12px x 1.333 = 16px */
+/* Use a 14px base font size with a 18px line height */
+//@font-size: 0.875em; /* 16px x .875 = 14px */
+//@line-height: 1.286em; /* 14px x 1.286 = 18px */
+/* Use a 12px base font size with a 18px line height */
+//@font-size: 0.75em; /* 16px x .75 = 12px */
+//@line-height: 1.5em; /* 12px x 1.5 = 18px */
+/* Use a 14px base font size with a 21px line height */
+@font-size: 0.875em; /* 16px x .875 = 14px */
+@line-height: 1.5em; /* 14px x 1.5 = 21px */
+
+/* Heading font-size and line-heights */
+@h1-fs: 2em;
+@h1-lh: 1.5em;
+@h2-fs: 1.5em;
+@h2-lh: @h1-lh;
+@h3-fs: 1.3em;
+@h3-lh: @h2-lh;
+@h4-fs: 1.1em;
+@h4-lh: @h3-lh;
+@h5-fs: @h4-fs;
+@h5-lh: @h4-lh;
+@h6-fs: @h5-fs;
+@h6-lh: @h5-lh;
+
+
+/* Uncomment what font-family want to use global */
+@font-family: serif;
+//@font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+//@font-family: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+//@font-family: Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+//@font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
+//@font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+//@font-family: Tahoma, Verdana, "DejaVu Sans", sans-serif;
+//@font-family: Helvetica, Arial, "Nimbus Sans L", sans-serif;
+//@font-family: Arial, Helvetica, "Nimbus Sans L", sans-serif;
+//@font-family: "Courier New", "DejaVu Sans Mono", monospace;
+
+/**
+ * Color section
+ */
+@white: #fff;
+@black: #000;
+@blue: #0000ee;
+@visited: #880088;
+
+/* An example color sheme:
+@l-brown: #d1c6ae;
+@brown: #c2a365;
+@d-brown: #a38c5d;
+@l-green: #ddebcf;
+@green: #78a648;
+@d-green: #004d22;
+@l-red: #f04e2a;
+@red: #be3d21;
+@l-grey: #e3e3e3;
+@grey: #a1a1a1;
+@d-grey: #464646;
+@l-sand: #e9e2d2;
+@sand:#c2bba9;
+@d-sand: #b8aa90;
+@l-yellow: #ebac2b;
+@yellow: #e49e15;
+@d-yellow: #e49e15;
+*/
+
+/* Background colors. By default, the inner items inherits our parent's color*/
+@body-clr: @white; //Body backgroundcolor;
+@page-clr: @body-clr; //Page background eg. if page width 960px, use this the background color of 960px section;
+@content-clr: @page-clr; // Background color of real content
+//@block-clr: @content-clr; //An example, use this eg. in sidebar contents
+
+@font-clr: @black;
+@h1-clr: @font-clr;
+@h2-clr: @h1-clr;
+@h3-clr: @h2-clr;
+@h4-clr: @h3-clr;
+@h5-clr: @h4-clr;
+@h6-clr: @h5-clr;
+
+@a-link: @blue;
+@a-visited: @visited;
+@a-hover: @a-link;
+@a-focus: @a-hover;
+@a-active: @a-hover;
+
+/* The default margin size. If you want to use different value on default vertical or horizontal margin, change v-margin or h-margin value.*/
+@margin: 1em;
+@margin-px: 16px;
+@v-margin: @margin;
+@h-margin: @margin;
+
+/* The default margin of left and right floated element.*/
+@float-left-default: 0 @h-margin @v-margin 0;
+@float-right-default: 0 0 @v-margin @h-margin;
+
+/* Example layout defaults.*/
+//@page-width: 1000px;
+//@content-width: 660px;
+//@left-sidebar-width: 220px;
+//@right-sidebar-width: @left-sidebar-width;
+//@header-height: 200px;
+//@footer-height: 200px;
+//@grid-margin: @h-margin;
+
+/* Uncomment this to set the main sprite image */
+/* @see: sprite */
+  //@sprite-image: url(../images/sprite.png);
+
+/* Button defaults @see css-button */
+@button-bg: #eeeeee; //background color
+@button-bg-hover: #eeeeff; // background color on hover
+@button-clr: @black; // text color on button
+@button-clr-hover: @button-clr; // text color on hover state
+@button-v-padding: 6px; //Left and right padding of button
+@button-h-padding: 0; //Top and bottom padding of button
+@button-radius: @margin-px; // Border radius on button
+@button-border-clr: #797775; // Border color around the button
+
+/* Tab defaults @see tab-style */
+@tab-bg: #ddd; //background color
+@tab-bg-hover: #eeeeff; // background color on hover
+@tab-clr: @black; // text color on tab
+@tab-clr-hover: @button-clr; // text color on hover state
+@tab-height: 25px; // height of tab
+@tab-move: 5px; // set this value, and tab height will increase with @tab-move when hovering
+@tab-v-padding: 20px; //Left and right padding of tab
+@tab-radius: @margin-px / 2 ; // Border radius on tab, only applied on left-top and right top
+@tab-border-clr: #797775; // Border color around the tab, except bottom
+
+/* Separated menu defaults @see separated-menu */
+@menu-separator-border: 1px solid @black; // border between menu items
+@menu-separator-height: @line-height; // height of border
+@menu-item-distance: 2 * @margin; // distance between two menu items
+
+/* Add a separator style to separate elements eg. a items of articles. */
+/* You should use border and background image too, but sprite section doesn't initialize yet. */
+/* @see row-separator */
+separator {
+  border-bottom: 1px solid @black;
+  //background: url(../images/sprite.png) no-repeat top left;
+}
+/* Set this to add margin and padding around the separator @see row-separator */
+@separator-height: 2 * @h-margin;

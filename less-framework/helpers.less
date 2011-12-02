@@ -1,0 +1,328 @@
+
+/**
+ * @file
+ * Complex mixings
+ */
+
+monospace {
+  fs(1.1em); /* Monospace fonts can be hard to read */
+  ff("Courier New", "DejaVu Sans Mono", monospace);
+}
+
+/* Markup free clearing (See: http://www.positioniseverything.net/easyclearing.html ) */
+clearfix {
+  &:after {
+	  content: ".";
+	  display: block;
+	  height: 0;
+	  clear: both;
+	  visibility: hidden;
+	}
+}
+
+/**
+ * Hide elements visually, but keep them available for screen-readers.
+ *
+ * Used for information required for screen-reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user. Must
+ * not be used for focusable elements (such as links and form elements) as this
+ * causes issues for keyboard only or voice recognition users. "!important" is
+ * used to prevent unintentional overrides.
+ */
+element-invisible {position: absolute !important; clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ clip: rect(1px, 1px, 1px, 1px);}
+
+/**
+ * Set all color of link states.
+ * The order of link states are based on Eric Meyer's article:
+ * http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states
+ */
+link(@a: @a-link; @b: @a-visited; @c: @a-hover; @d: @a-focus; @e: @a-active;) {
+  &:link {color: @a;}
+  &:visited {color: @b;}
+  &:hover {color: @c;}
+  &:focus {color: @d;}
+  &:active {color: @e;}
+}
+
+/*
+ * Create link block.
+ * It's used to make an overlay link above a content
+ * Set this class to a's parent block element.
+ * Use link-block(0) to show text within a tags
+ * @todo Check it in most browser
+ */
+link-block(@text-indent: -10000px;) {
+	position: relative;
+  block;
+
+	a {
+		display: block;
+		text-indent: @text-indent;
+		height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+	}
+}
+
+/*
+ * The basic sprite class
+ */
+sprite(@background-position; @width: auto; @height: auto) {
+  background: @sprite-image no-repeat @background-position;
+  width: @width;
+  height: @height;
+  display: block;
+}
+
+/*
+ * The basic css button class.
+ */
+css-button(@bg: @button-bg; @clr: @button-clr; @bg-hover: @button-bg-hover; @clr-hover: @button-clr-hover) {
+  inline-block;
+  //Some browser set to forms all own alignment, therefore we do it too.
+  pleft(@button-v-padding);
+  pright(@button-v-padding);
+  ptop(@button-h-padding);
+  pbottom(@button-h-padding);
+  cursor: pointer;
+  border-radius(@button-radius);
+  mright;
+  border: 1px solid #797775;
+  background-color: @bg;
+  color: @clr;
+  //If a button is created from link, need to define a the :link state too
+  &:link,
+  &:visited {
+    color: @clr;
+  }
+  &:hover {
+    background-color: @bg-hover;
+    color: @clr-hover;
+  }
+}
+
+/*
+ * Extends basic css button class to create a 100% width button.
+ */
+css-button-wide(@bg: @button-bg; @clr: @button-clr; @bg-hover: @button-bg-hover; @clr-hover: @button-clr-hover) {
+  // Passing parameters between mixing doesn't work good, therefore we need to apply directly this mixings params.
+  //css-button(@bg; @clr; @bg-hover; @cl-hover;);
+  css-button;
+  pleft(0);
+  pright(0);
+  clr;
+  alignc;
+  width: 100%;
+
+  background-color: @bg;
+  color: @clr;
+  &:link,
+  &:visited {
+    color: @clr;
+  }
+  &:hover {
+    background-color: @bg-hover;
+    color: @clr-hover;
+  }
+}
+
+/*
+ * Create tabs with @height, on hover tab height increases @move.
+ * If you want the same behaviour on active tab item, as hover, you should set class "active" on li
+ */
+tab-style(@height: 25px; @move: 5px; @bg: @tab-bg; @clr: @tab-clr; @bg-hover: @tab-bg-hover; @clr-hover: @tab-clr-hover) {
+  pleft;
+  border-bottom: 1px solid @tab-border-clr;
+  clearfix;
+  list-style-type: none;
+
+  li {
+    //Possible links in li, we set as link block, but need to override absolute position later
+    link-block(0);
+    left(0);
+    relative;
+    mright;
+    alignc;
+    nopadding;
+    border-radius(@tab-radius @tab-radius 0 0);
+    background-color: @bg;
+    color: @clr;
+    padding-left: @tab-v-padding;
+    padding-right: @tab-v-padding;
+    margin-top: @move;
+    line-height: @height;
+
+    &.active,
+    &:hover {
+      background-color: @bg-hover;
+      color: @clr;
+      padding-left: @tab-v-padding;
+      padding-right: @tab-v-padding;
+      mtop(0);
+
+      // Using this height counting makes moving text
+      height: @height + @move; // To use fixed text comment this line
+      //height: @move; // and uncomment these
+      //padding-top: @move; //two lines. Note! Padding and height within same declaration should cause browser compatibility problems
+    }
+
+    a {
+      //Override postition absolute come from link-block
+      position: relative;
+    }
+  }
+}
+
+/*
+ * It makes a menu style separated items by right border
+ * You should set this to a list and add last class to the last li item.
+ * @todo browser compatibility
+ */
+separated-menu (@brdr: @menu-separator-border; @hght: @menu-separator-height; @dist: @menu-item-distance) {
+  clr;
+  width: 100%;
+  nomarding;
+
+  li {
+    list-style: none;
+    display: inline-block;
+    border-right:@brdr;
+    line-height: @hght;
+
+    a {
+      margin-left: @dist / 2;
+      margin-right:@dist / 2;
+
+      //@todo implement height count. Normally doesn't need full heigth to show border.
+      display: inline-block;
+    }
+
+    &.last {
+      noborder;
+    }
+  }
+}
+
+/*
+ * Separate elements as rows. It works with images and borders as separator too.
+ */
+row-separator(@hgt: @separator-height;) {
+  margin-top: @hgt / 2;
+  mbottom(0); //This prevent to add + unnecessary margins
+  overflow:hidden;
+  padding-bottom: @hgt / 2;
+  clr;
+  separator;
+  //border-bottom: 1px solid @black;
+	&.first {
+		mtop(0);
+	}
+
+	&.last {
+		nobg;
+		nopadding;
+    noborder;
+	}
+}
+
+/*
+ * Initialize triangle, this is just a helper function.
+ */
+triangle {
+  border-color: rgba(0,0,0,0);
+  border-style: solid;
+  border-width: @font-size;
+  display: inline-block;
+  content: "";
+  z-index: 1000;
+}
+
+/*
+ * Triangles with directions. These hasn't default values, you need to extend in base.less, if you want to use this.
+ * Eg:
+ *  triangle-right {
+ *    triangle-right(#000; 5px; 5px; 10px);
+ *  }
+ * @clr: The color of triangle
+ * @size: The size of triangle
+ * @top: Offset from top of parent.
+ * @wdth: The width of triangle
+ */
+triangle-right (@clr; @size; @top; @wdth;) {
+  list-style: none;
+  position: relative;
+  margin-left: @wdth;
+  &:before {
+    triangle;
+    border-left-color: @clr;
+    border-width: @size;
+    position: absolute;
+    top: @top;
+    left: -1 * @wdth;
+  }
+}
+
+triangle-left (@clr; @size; @top; @wdth;) {
+  list-style: none;
+  position: relative;
+  margin-left: -1 * @wdth;
+  &:before {
+    triangle;
+    border-right-color: @clr;
+    border-width: @size;
+    position: absolute;
+    top: @top;
+    left: @wdth;
+  }
+}
+
+triangle-top (@clr; @size; @top; @wdth;) {
+  list-style: none;
+  position: relative;
+  margin-left: @wdth;
+
+  &:before {
+    triangle;
+    border-bottom-color: @clr;
+    border-width: @size;
+    position: absolute;
+    top: @top;
+    left: -1 * @wdth;
+  }
+}
+
+triangle-bottom (@clr; @size; @top; @wdth;) {
+  list-style: none;
+  position: relative;
+  margin-left: @wdth;
+
+  &:before {
+    triangle;
+    border-top-color: @clr;
+    border-width: @size;
+    position: absolute;
+    top: @top;
+    left: -1 * @wdth;
+  }
+}
+
+/*
+ * This is an "alternate" triangle, where all size of border are shown.
+ */
+rectangle (@clr; @size; @top; @wdth;)  {
+  position: relative;
+  margin-left: @wdth;
+  list-style: none;
+
+  &:before {
+    triangle;
+    border-color: @clr;
+    border-width: @size;
+    position: absolute;
+    top: @top;
+    left: -1 * @wdth;
+  }
+}

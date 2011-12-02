@@ -1,0 +1,121 @@
+
+/**
+ * @file
+ * Contains mixings for easy css3 usage.
+ * Originally based on https://github.com/anthonyvscode/Less-CSS3-Mixins
+ */
+
+/* Border Radius */
+border-radius (@radius: @margin-px;){
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+/*Shadows*/
+box-shadow(@x:3px; @y:3px; @radius:3px; @shadow_color:#888;) {
+	box-shadow: @x @y @radius @shadow_color;
+	-webkit-box-shadow:@x @y @radius @shadow_color;
+	-moz-box-shadow:@x @y @radius @shadow_color;
+}
+
+//The text shadow no need special changes based on browser, declare it only for using in html as class
+.text_shadow(@x: 0; @y: 1px; @radius: 1px; @shadow_color:#fff){text-shadow:@x @y @radius @shadow_color;}
+
+opacity(@op:100;) {
+	filter:alpha(opacity=@op);
+	-moz-opacity:@op/100;
+	-khtml-opacity:@op/100;
+	opacity:@op/100;
+}
+
+h-gradient (@startColor: #555; @endColor: #333; @img: none;) {
+  /* Legacy browsers */
+  background: @endColor, @img;
+  /* Recent browsers */
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: @img, -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+  background: @img, -webkit-linear-gradient(right center, @startColor, @endColor);
+  background: @img, -moz-linear-gradient(right center, @startColor, @endColor);
+  background: @img, -o-linear-gradient(left,  @startColor,  @endColor);
+  background: @img, -khtml-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+  //@todo: figure out, how to eat php parser this lines
+  //filter: e(%("progid:DXImageTransform.Microsoft.Gradient(StartColorStr='%d', EndColorStr='%d', GradientType=1)",@startColor,@endColor));
+  //-ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorStr='%d', EndColorStr='%d', GradientType=1))",@startColor,@endColor);
+}
+
+v-gradient (@startColor: #555; @endColor: #333; @img: none;) {
+  /* Legacy browsers */
+  background: @endColor, @img;
+  /* Recent browsers */
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: @img, -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background: @img, -webkit-linear-gradient(@startColor, @endColor);
+  background: @img, -moz-linear-gradient(@startColor, @endColor);
+  background: @img, -o-linear-gradient(top,  @startColor,  @endColor);
+  background: @img, -khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  //@todo: figure out, how to eat php parser this lines
+  //filter: e(%("progid:DXImageTransform.Microsoft.Gradient(StartColorStr='%d', EndColorStr='%d', GradientType=0)",@startColor,@endColor));
+  //-ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorStr='%d', EndColorStr='%d', GradientType=0))",@startColor,@endColor);
+}
+
+hline-gradient (@startColor: #B0BAC5; @midColor1: #9DA7B2; @midColor2: #919CA8; @endColor: #7E8A98; @img: none;) {
+  background: @endColor, @img;
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: @img, -moz-linear-gradient(top, @startColor 0%, @midColor1 50%, @midColor2 51%, @endColor 100%);
+  background: @img, -webkit-gradient(linear, left top, left bottom, color-stop(0%,@startColor), color-stop(50%,@midColor1), color-stop(51%,@midColor2), color-stop(100%,@endColor));
+  //@todo: figure out, how to eat php parser this lines
+  //filter: e(%("progid:DXImageTransform.Microsoft.Gradient(StartColorStr='%d', EndColorStr='%d', GradientType=0)",@startColor,@endColor));
+  //-ms-filter: %("progid:DXImageTransform.Microsoft.gradient(startColorStr='%d', EndColorStr='%d', GradientType=0))",@startColor,@endColor);
+}
+
+transition(@range: all; @time: 1s; @ease: ease-in-out;) {
+	-moz-transition: @range @time @ease;
+	-webkit-transition: @range @time @ease;
+	-o-transition: @range @time @ease;
+	transition: @range @time @ease;
+}
+
+/* Transformations */
+// not tested
+// @todo:
+.skew(@angle_x:35; @angle_y:0;) {
+	-webkit-transform: skew(formatstring("{0}deg", @angle_x), formatstring("{0}deg", @angle_y));
+	-moz-transform: skew(formatstring("{0}deg", @angle_x), formatstring("{0}deg", @angle_y));
+	-o-transform: skew(formatstring("{0}deg", @angle_x), formatstring("{0}deg", @angle_y));
+	-ms-transform: skew(formatstring("{0}deg", @angle_x), formatstring("{0}deg", @angle_y));
+	transform: skew(formatstring("{0}deg", @angle_x), formatstring("{0}deg", @angle_y));
+}
+
+.scale(@scale_x: 1;) {
+	-webkit-transform: scale(@scale_x);
+	-moz-transform: scale(@scale_x);
+	-o-transform: scale(@scale_x);
+	-ms-transform: scale(@scale_x);
+	transform: scale(@scale_x);
+}
+
+.rotate(@deg:1deg;) {
+	-webkit-transform: rotate(@deg);
+	-moz-transform: rotate(@deg);
+	-o-transform: rotate(@deg);
+	-ms-transform: rotate(@deg);
+	transform: rotate(@deg);
+}
+
+.translate(@move_x: 10px; @move_y: 10px;) {
+	-webkit-transform: translate(@move_x, @move_y);
+	-moz-transform: translate(@move_x, @move_y);
+	-o-transform: translate(@move_x, @move_y);
+	-ms-transform:translate(@move_x, @move_y);
+	transform: translate(@move_x, @move_y);
+}
