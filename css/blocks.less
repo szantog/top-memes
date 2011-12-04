@@ -7,6 +7,21 @@
 
 .block /* Block wrapper */ {
   margin-bottom: 1.5em;
+
+  .block-title {
+    white;
+    bg-red;
+    padding: 5px 10px;
+    border-radius(4px 4px 0 0);
+    fs(@h3-fs);
+    lh(@h3-lh);
+  }
+
+  .content {
+    padding: 10px;
+    bg-content-clr;
+    border-radius(0 0 4px 4px);
+  }
 }
 
 .block.first /* The first block in the region */ {
