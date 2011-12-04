@@ -16,9 +16,13 @@ body {
   margin: 0;
   padding: 0;
   background: url("../images/bg.png") repeat scroll 0 0 #F9F9F9;
+  //This need to prevent horizontal sidebar;
+  max-width: 100%;
 }
 
 #page-wrapper {
+  //This need to prevent horizontal sidebar;
+  overflow-y: hidden;
 }
 
 #page {
@@ -42,6 +46,55 @@ body {
  * Header
  */
 #header {
+  bg(@red);
+
+  .section {
+
+  }
+
+  #site-name-with-sec {
+    clearfix;
+  }
+
+  #name-and-slogan {
+    link-block;
+    left(0);
+    bg(@red);
+    border-radius(0 0 20px 0);
+
+    .inner {
+      padding: 10px 20px 10px 0;
+    }
+
+    #site-name /* The name of the website */ {
+      margin: 0;
+      font-size: 2em;
+      line-height: 1.5em;
+      ff(@font-family-h1);
+      white;
+      fsnormal;
+      uppercase;
+      bold;
+    }
+
+
+    #site-slogan /* The slogan (or tagline) of a website */ {
+      ff("verdana");
+      fs(1.1em);
+      white;
+      strong {
+        fwnormal;
+      }
+    }
+  }
+  #white-header {
+    bg-body;
+
+    .inner {
+      clearfix;
+      bg-content-clr;
+    }
+  }
 }
 
 #header .section {
@@ -55,31 +108,6 @@ body {
 
 #logo img {
   vertical-align: bottom;
-}
-
-#name-and-slogan /* Wrapper for website name and slogan */ {
-  float: left;
-}
-
-h1#site-name,
-div#site-name /* The name of the website */ {
-  margin: 0;
-  font-size: 2em;
-  line-height: 1.5em;
-}
-
-#site-name a:link,
-#site-name a:visited {
-  color: #000;
-  text-decoration: none;
-}
-
-#site-name a:hover,
-#site-name a:focus {
-  text-decoration: underline;
-}
-
-#site-slogan /* The slogan (or tagline) of a website */ {
 }
 
 .region-header /* Wrapper for any blocks placed in the header region */ {

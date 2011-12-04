@@ -22,7 +22,8 @@
 body {
 }
 
-#page-wrapper,
+#main-wrapper,
+#site-name-with-sec,
 .region-bottom {
   /*
    * If you want to make the page a fixed width and centered in the viewport,
@@ -37,10 +38,23 @@ body {
 #page {
 }
 
+#site-name-with-sec {
+  margin-left: auto;
+}
 /*
  * Header
  */
 #header {
+  #name-and-slogan,
+  #white-header {
+    height: @header-height;
+  }
+
+  #white-header
+   {
+
+    width: 1000%;
+  }
 }
 
 #header .section {
@@ -54,6 +68,7 @@ body {
  */
 #main-wrapper {
   relative;
+  mtop(20px);
 }
 
 #main {

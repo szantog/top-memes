@@ -47,7 +47,7 @@
  * @see zen_process_block()
  */
 ?>
-<div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
+<div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>><div class="block-inner">
 
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
@@ -59,4 +59,4 @@
     <?php print $content; ?>
   </div>
 
-</div><!-- /.block -->
+</div></div><!-- /.block -->
