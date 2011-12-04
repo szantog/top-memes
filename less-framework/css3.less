@@ -88,12 +88,12 @@ transition(@range: all; @time: 1s; @ease: ease-in-out;) {
 /* Transformations */
 // not tested
 // @todo:
-.skew(@angle_x:35; @angle_y:0;) {
-	-webkit-transform: skew(formatstring("{0}deg", @angle_x), formatstring("{0}deg", @angle_y));
-	-moz-transform: skew(formatstring("{0}deg", @angle_x), formatstring("{0}deg", @angle_y));
-	-o-transform: skew(formatstring("{0}deg", @angle_x), formatstring("{0}deg", @angle_y));
-	-ms-transform: skew(formatstring("{0}deg", @angle_x), formatstring("{0}deg", @angle_y));
-	transform: skew(formatstring("{0}deg", @angle_x), formatstring("{0}deg", @angle_y));
+skew(@angle_x:35deg; @angle_y:0;) {
+	-webkit-transform: skew(@angle_x, @angle_y);
+	-moz-transform: skew(@angle_x, @angle_y);
+	-o-transform: skew(@angle_x,  @angle_y);
+	-ms-transform: skew(@angle_x, @angle_y);
+	transform: skew(@angle_x, @angle_y);
 }
 
 .scale(@scale_x: 1;) {

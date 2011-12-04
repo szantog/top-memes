@@ -138,9 +138,16 @@ function tmemes_preprocess_comment(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-/* -- Delete this line if you want to use this function
+
 function tmemes_preprocess_block(&$variables, $hook) {
   // Add a count to all the blocks in the region.
   $variables['classes_array'][] = 'count-' . $variables['block_id'];
+  if ($variables['block']->subject) {
+    $variables['classes_array'][] = 'with-title';
+  }
+
+  if ($variables['block']->region == 'sidebar_first' || $variables['block']->region == 'sidebar_second') {
+    $variables['classes_array'][] = 'in-sidebar';
+  }
 }
 // */

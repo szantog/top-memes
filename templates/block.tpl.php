@@ -51,7 +51,7 @@
 
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
-    <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
+    <div class="block-title-wrapper"><h2<?php print $title_attributes; ?>><?php print $title; ?></h2></div>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 

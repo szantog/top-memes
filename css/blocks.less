@@ -8,18 +8,32 @@
 .block /* Block wrapper */ {
   margin-bottom: 1.5em;
 
-  .block-title {
-    white;
-    bg-red;
-    padding: 5px 10px;
-    border-radius(4px 4px 0 0);
-    fs(@h3-fs);
-    lh(@h3-lh);
+  &.in-sidebar {
+    .block-title-wrapper {
+
+      h2 {
+        white;
+        fs(@h3-fs);
+        lh(@h3-lh);
+        skew(-2deg; -1deg);
+        padding: 0 10px;
+      }
+
+      bg-red;
+      padding: 5px 10px;
+      skew(2deg; 1deg);
+      mleft(-10px);
+      mright(-10px);
+    }
+
+    .content {
+      bg-content-clr;
+      mtop(-4px);
+    }
   }
 
   .content {
     padding: 10px;
-    bg-content-clr;
     border-radius(0 0 4px 4px);
   }
 }
