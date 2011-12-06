@@ -23,37 +23,29 @@ body {
 }
 
 #main-wrapper,
-#site-name-with-sec,
 .region-bottom {
   /*
    * If you want to make the page a fixed width and centered in the viewport,
    * this is the standards-compliant way to do that. See also the ie6.css file
    * for the necessary IE5/IE6quirks hack to center a div.
    */
-  margin-left: auto;
-  margin-right: auto;
-  width: @page-width;
+  margin-left: 20px;
+  max-width: @page-width;
 }
 
 #page {
 }
 
 #site-name-with-sec {
-  margin-left: auto;
+  max-width: @page-width;
 }
 /*
  * Header
  */
 #header {
-  #name-and-slogan,
-  #white-header {
+  #name-and-slogan {
     height: @header-height;
-  }
-
-  #white-header
-   {
-
-    width: 1000%;
+    pleft(30px);
   }
 }
 
@@ -81,28 +73,29 @@ body {
 .no-sidebars #content {
   left(0); /* LTR */
   width: @page-width;
-  margin-right: -1 * @page-width; /* LTR */ /* Negative value of #content's width + left margin. */
+  //margin-right: -1 * @page-width; /* LTR */ /* Negative value of #content's width + left margin. */
   nopadding /* DO NOT CHANGE. Add padding or margin to #content .section. */
 
   .section {
     nomarding;
   }
+  relative;
 }
 
 .sidebar-first #content {
   width: @page-width - @sidebar-first-width;
-  margin-left: @sidebar-first-width; /* LTR */ /* The width of .region-sidebar-first. */
+  //margin-left: @sidebar-first-width; /* LTR */ /* The width of .region-sidebar-first. */
 }
 
 .sidebar-second #content {
   width: @page-width - @sidebar-second-width;
-  margin-right: -1 * (@page-width - @sidebar-second-width); /* LTR */ /* Negative value of #content's width + left margin. */
+  //margin-right: -1 * (@page-width - @sidebar-second-width); /* LTR */ /* Negative value of #content's width + left margin. */
 }
 
 .two-sidebars #content {
   width: @page-width - @sidebar-first-width - @sidebar-second-width;
-  margin-left: @sidebar-first-width; /* LTR */ /* The width of .region-sidebar-first */
-  margin-right: -1 * (@sidebar-first-width + @page-width)760px; /* LTR */ /* Negative value of #content's width + left margin. */
+  //margin-left: @sidebar-first-width; /* LTR */ /* The width of .region-sidebar-first */
+  //margin-right: -1 * (@sidebar-first-width + @page-width)760px; /* LTR */ /* Negative value of #content's width + left margin. */
 }
 
 /*
@@ -141,11 +134,11 @@ body {
  */
 .region-sidebar-first {
   width: @sidebar-first-width;
-  margin-right: -1 * @sidebar-first-width; /* LTR */ /* Negative value of .region-sidebar-first's width + left margin. */
+  //margin-left: -1 * @sidebar-first-width; /* LTR */ /* Negative value of .region-sidebar-first's width + left margin. */
 }
 
 .region-sidebar-first .section {
-  margin: 0 20px 0 0; /* LTR */
+  margin: 0 15px;
   padding: 0;
 }
 
@@ -154,12 +147,12 @@ body {
  */
 .region-sidebar-second {
   width: @sidebar-second-width;
-  margin-left: @page-width - @sidebar-first-width; /* LTR */ /* Width of content + sidebar-first. */
-  margin-right: -1 * (@page-width - @sidebar-first-width); /* LTR */ /* Negative value of .region-sidebar-second's width + left margin. */
+  //margin-left: @page-width - @sidebar-first-width; /* LTR */ /* Width of content + sidebar-first. */
+  //margin-right: -1 * (@page-width - @sidebar-first-width); /* LTR */ /* Negative value of .region-sidebar-second's width + left margin. */
 }
 
 .region-sidebar-second .section {
-  margin: 0 0 0 20px; /* LTR */
+  margin: 0 15px;
   padding: 0;
 }
 

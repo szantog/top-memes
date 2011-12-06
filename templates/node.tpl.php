@@ -96,8 +96,14 @@
   <?php endif; ?>
 
   <?php if ($display_submitted): ?>
-    <div class="submitted">
-      <?php print $submitted; ?>
+    <div class="submitted-by">
+      <?php print $name; ?>
+    </div>
+    <div class="element-invisible">
+      <?php print $date; ?>
+    </div>
+    <div class="submitted-on">
+      <?php print $printed_date; ?>
     </div>
   <?php endif; ?>
 

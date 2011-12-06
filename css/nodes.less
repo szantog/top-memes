@@ -8,7 +8,44 @@
 @import "../less-framework/base.less";
 
 .node /* Node wrapper */ {
+
+  &.node-teaser {
+    padding: 10px;
+    //border-bottom: 1px solid @red;
+    //border-left: 1px solid @red;
+    mbottom(20px);
+    bg-content-clr;
+    border-radius(0 60px 0 0);
+    relative;
+  }
+
+  .submitted-on {
+    absolutetr;
+    white;
+    bg-red;
+    ffhead;
+    mtop(7px);
+    padding: 5px;
+    fslh(15px);
+    alignc;
+    rotate(-3deg);
+
+    span {
+      block;
+    }
+  }
+
+  &.view-mode-full {
+    .submitted-on {
+      mtop(30px);
+      mright(10px);
+      trbg-white;
+      black;
+    }
+  }
 }
+
+
 
 .preview .node /* Preview of the content before submitting new or updated content */ {
   /* background-color: #ffffea; */ /* Drupal core uses a #ffffea background */

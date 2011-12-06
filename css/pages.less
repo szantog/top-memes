@@ -16,13 +16,10 @@ body {
   margin: 0;
   padding: 0;
   background: url("../images/bg.png") repeat scroll 0 0 #F9F9F9;
-  //This need to prevent horizontal sidebar;
-  max-width: 100%;
 }
 
 #page-wrapper {
-  //This need to prevent horizontal sidebar;
-  overflow-y: hidden;
+
 }
 
 #page {
@@ -46,7 +43,8 @@ body {
  * Header
  */
 #header {
-  bg(@red);
+  bg-content-clr;
+
 
   .section {
 
@@ -61,7 +59,6 @@ body {
     left(0);
     bg(@red);
     border-radius(0 0 20px 0);
-
     .inner {
       padding: 10px 20px 10px 0;
     }
@@ -130,7 +127,7 @@ body {
 }
 
 #content .section {
-  padding: 0 10px 10px;
+  padding: 0 10px 10px 0;
 }
 
 .region-highlighted {

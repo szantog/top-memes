@@ -103,10 +103,11 @@ function tmemes_preprocess_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function tmemes_preprocess_node(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
 
+function tmemes_preprocess_node(&$variables, $hook) {
+  $node = $variables['node'];
+  $variables['date'] = format_date($node->created, 'short');
+  $variables['printed_date'] = tmemes_printed_date($variables['date']);
   // Optionally, run node-type-specific preprocess functions, like
   // tmemes_preprocess_node_page() or tmemes_preprocess_node_story().
   $function = __FUNCTION__ . '_' . $variables['node']->type;
@@ -124,9 +125,12 @@ function tmemes_preprocess_node(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("comment" in this case.)
  */
-/* -- Delete this line if you want to use this function
+
 function tmemes_preprocess_comment(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  $comment = $variables['elements']['#comment'];
+  $node = $variables['elements']['#node'];
+  $variables['created'] = format_date($comment->created, 'short');
+  $variables['submitted'] = t('Submitted by !username on !datetime', array('!username' => $variables['author'], '!datetime' => $variables['created']));
 }
 // */
 
@@ -150,4 +154,14 @@ function tmemes_preprocess_block(&$variables, $hook) {
     $variables['classes_array'][] = 'in-sidebar';
   }
 }
-// */
+
+
+function tmemes_printed_date($date) {
+  $output = '';
+  $date = explode(' - ', $date);
+
+  $output .= '<span class="date-first">' . $date[0] . '</span>';
+  $output .= '<span class="date-last">' . $date[1] . '</span>';
+  dsm(get_defined_vars());
+  return $output;
+}

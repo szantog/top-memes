@@ -26,27 +26,15 @@
       mright(-10px);
     }
 
-    .content {
+    > .block-inner > .content {
       bg-content-clr;
       mtop(-4px);
-
-      > div {
-        mtop(10px);
-      }
-    }
-
-    > .block-inner > .content {
-      padding: 10px;
       border-radius(0 0 4px 4px);
+      padding: 10px;
     }
-  }
 
-  .content {
-    div > div:first-child {
-      mtop(0);
-    }
-    div > div:last-child {
-      mbottom(0);
+    .content > .view {
+      margin: 1em 0;
     }
   }
 }
