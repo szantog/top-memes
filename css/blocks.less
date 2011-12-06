@@ -29,13 +29,31 @@
     .content {
       bg-content-clr;
       mtop(-4px);
+
+      > div {
+        mtop(10px);
+      }
+    }
+
+    > .block-inner > .content {
+      padding: 10px;
+      border-radius(0 0 4px 4px);
     }
   }
 
   .content {
-    padding: 10px;
-    border-radius(0 0 4px 4px);
+    div > div:first-child {
+      mtop(0);
+    }
+    div > div:last-child {
+      mbottom(0);
+    }
   }
+}
+
+// We need padding only the first .content in a block
+.block {
+
 }
 
 .block.first /* The first block in the region */ {
