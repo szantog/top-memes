@@ -162,6 +162,5 @@ function tmemes_printed_date($date) {
 
   $output .= '<span class="date-first">' . $date[0] . '</span>';
   $output .= '<span class="date-last">' . $date[1] . '</span>';
-  dsm(get_defined_vars());
   return $output;
 }
