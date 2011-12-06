@@ -158,7 +158,7 @@ function tmemes_preprocess_block(&$variables, $hook) {
 
 function tmemes_printed_date($date) {
   $output = '';
-  $date = explode(' - ', $date);
+  $date = explode(' ', $date);
 
   $output .= '<span class="date-first">' . $date[0] . '</span>';
   $output .= '<span class="date-last">' . $date[1] . '</span>';
