@@ -41,6 +41,7 @@ stylesheets[all][]        = css/nodes.less
 stylesheets[all][]        = css/comments.less
 stylesheets[all][]        = css/forms.less
 stylesheets[all][]        = css/fields.less
+stylesheets[all][]        = css/mobile.less
 stylesheets[print][]      = css/print.less
 
 ; Example of adding handheld stylesheets. The iPhone's preferred media type

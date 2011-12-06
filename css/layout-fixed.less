@@ -30,7 +30,7 @@ body {
    * for the necessary IE5/IE6quirks hack to center a div.
    */
   margin-left: 20px;
-  max-width: @page-width;
+  //max-width: @page-width;
 }
 
 #page {
@@ -72,7 +72,7 @@ body {
 #content,
 .no-sidebars #content {
   left(0); /* LTR */
-  width: @page-width;
+  //width: @page-width;
   //margin-right: -1 * @page-width; /* LTR */ /* Negative value of #content's width + left margin. */
   nopadding /* DO NOT CHANGE. Add padding or margin to #content .section. */
 
@@ -82,20 +82,12 @@ body {
   relative;
 }
 
-.sidebar-first #content {
-  width: @page-width - @sidebar-first-width;
-  //margin-left: @sidebar-first-width; /* LTR */ /* The width of .region-sidebar-first. */
+.page-node #content {
+  max-width: 490px;
 }
 
-.sidebar-second #content {
-  width: @page-width - @sidebar-second-width;
-  //margin-right: -1 * (@page-width - @sidebar-second-width); /* LTR */ /* Negative value of #content's width + left margin. */
-}
-
-.two-sidebars #content {
-  width: @page-width - @sidebar-first-width - @sidebar-second-width;
-  //margin-left: @sidebar-first-width; /* LTR */ /* The width of .region-sidebar-first */
-  //margin-right: -1 * (@sidebar-first-width + @page-width)760px; /* LTR */ /* Negative value of #content's width + left margin. */
+#sidebars {
+  width: 460px;
 }
 
 /*
