@@ -114,6 +114,17 @@ h2.node-title /* Node title */ {
     .media-container {
       overflow: hidden;
 
+      .colorbox-link {
+        display: block;
+        height: 100%;
+        outline: medium none;
+        position: absolute;
+        text-indent: -10000px;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+      }
+
       img {
         width: 350px;
       }
@@ -122,6 +133,7 @@ h2.node-title /* Node title */ {
         absolutetl;
         padding: 5px 10px;
         bg-body;
+        z-index: 2;
       }
 
       .field-name-field-description {
