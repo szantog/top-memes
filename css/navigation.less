@@ -17,6 +17,25 @@ li a.active {
  */
 #navigation {
   /* overflow: hidden; /* Sometimes you want to prevent overlapping with main div. */
+  tab-style;
+  absolutetl(-22px; 0);
+  noborder;
+  border-top: 2px solid @red;
+  li {
+    border-radius(0 0 @tab-radius @tab-radius);
+    mtop(0);
+    transition(all; 0.2s);
+
+    &.active {
+      height: auto;
+      ptop(5px);
+    }
+
+    &:hover {
+      height: auto;
+      ptop(5px);
+    }
+  }
 }
 
 #navigation ul.links, /* Main menu and secondary menu links */
@@ -28,8 +47,6 @@ li a.active {
 
 #navigation ul.links li, /* A simple method to get navigation links to appear in one line. */
 #navigation .content li {
-  float: left; /* LTR */
-  padding: 0 10px 0 0; /* LTR */
 }
 
 .region-navigation {

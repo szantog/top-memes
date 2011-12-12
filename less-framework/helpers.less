@@ -159,7 +159,6 @@ tab-style(@height: 25px; @move: 5px; @bg: @tab-bg; @clr: @tab-clr; @bg-hover: @t
     &.active,
     &:hover {
       background-color: @bg-hover;
-      color: @clr;
       padding-left: @tab-v-padding;
       padding-right: @tab-v-padding;
       mtop(0);
@@ -173,6 +172,13 @@ tab-style(@height: 25px; @move: 5px; @bg: @tab-bg; @clr: @tab-clr; @bg-hover: @t
     a {
       //Override postition absolute come from link-block
       position: relative;
+      &:link,
+      &:visited {
+        color: @clr;
+      }
+      &:hover {
+        color: @clr-hover;
+      }
     }
   }
 }

@@ -10,6 +10,10 @@
     width: 380px;
     margin: 0 auto;
   }
+
+  .page-node #content {
+    width: 460px;
+  }
 }
 
 @media screen and (min-width:1280px) {
@@ -37,5 +41,39 @@
 
   #main-wrapper {
     mleft(0);
+  }
+
+  #navigation {
+    overflow: hidden;
+    height: 22px;
+    top: -35px;
+    noborder;
+    transition(all; 0.2s);
+
+    &:hover {
+
+      height: 200px;
+      ul {
+        display: block;
+      }
+    }
+
+    h2 {
+      clip: auto;
+      position: relative !important;
+      css-button;
+      nomargin;
+      mbottom(1px);
+    }
+
+    ul {
+      display: none;
+    }
+
+    li {
+      nofloat;
+      width: 200px;
+      mbottom(1px);
+    }
   }
 }
