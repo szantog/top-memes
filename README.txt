@@ -131,3 +131,7 @@ Optional steps:
       http://drupal.org/node/193318
     and Drupal 7's Theme Guide online at:
       http://drupal.org/theme-guide
+
+Az interneten terjedő vírusvideók, képek, mémek gyűjteménye, amit felkapott az internetes közösség. Digitális népművészet, közösségi alkotás remekei.
+Politikusok kifigurázása, vagy ki ne emlékezne Szalacsi Sándorra, a kanadai mókusra, netán a Szomorú Keanu Reeves képekre.
+De ugyanúgy megtalálhatók a legfelkapottabb 2011-es mémekhez kapcsolódó alkotások, mint például a Nyan Cat, Comic Sans project.
