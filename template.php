@@ -18,13 +18,13 @@
  *   this, we have to override the theme function. You have to first find the
  *   theme function that generates the output, and then "catch" it and modify it
  *   here. The easiest way to do it is to copy the original function in its
- *   entirety and paste it here, changing the prefix from theme_ to tmemes_.
+ *   entirety and paste it here, changing the prefix from theme_ to ecigi_.
  *   For example:
  *
  *     original: theme_breadcrumb()
- *     theme override: tmemes_breadcrumb()
+ *     theme override: ecigi_breadcrumb()
  *
- *   where tmemes is the name of your sub-theme. For example, the
+ *   where ecigi is the name of your sub-theme. For example, the
  *   zen_classic theme would define a zen_classic_breadcrumb() function.
  *
  *   If you would like to override either of the two theme functions used in Zen
@@ -72,7 +72,7 @@ if (!module_exists('less')){
  *   The name of the template being rendered ("html" in this case.)
  */
 /* -- Delete this line if you want to use this function
-function tmemes_preprocess_html(&$variables, $hook) {
+function ecigi_preprocess_html(&$variables, $hook) {
   $variables['sample_variable'] = t('Lorem ipsum.');
 
   // The body tag's classes are controlled by the $classes_array variable. To
@@ -90,7 +90,7 @@ function tmemes_preprocess_html(&$variables, $hook) {
  *   The name of the template being rendered ("page" in this case.)
  */
 
-function tmemes_preprocess_page(&$vars, $hook) {
+function ecigi_preprocess_page(&$vars, $hook) {
     //Add only content tpl.php if we are on colorbox page
 
   if (isset($_GET['colorbox'])) {
@@ -109,12 +109,12 @@ function tmemes_preprocess_page(&$vars, $hook) {
  *   The name of the template being rendered ("node" in this case.)
  */
 
-function tmemes_preprocess_node(&$variables, $hook) {
+function ecigi_preprocess_node(&$variables, $hook) {
   $node = $variables['node'];
   $variables['date'] = format_date($node->created, 'short');
-  $variables['printed_date'] = tmemes_printed_date($variables['date']);
+  $variables['printed_date'] = ecigi_printed_date($variables['date']);
   // Optionally, run node-type-specific preprocess functions, like
-  // tmemes_preprocess_node_page() or tmemes_preprocess_node_story().
+  // ecigi_preprocess_node_page() or ecigi_preprocess_node_story().
   $function = __FUNCTION__ . '_' . $variables['node']->type;
   if (function_exists($function)) {
     $function($variables, $hook);
@@ -131,7 +131,7 @@ function tmemes_preprocess_node(&$variables, $hook) {
  *   The name of the template being rendered ("comment" in this case.)
  */
 
-function tmemes_preprocess_comment(&$variables, $hook) {
+function ecigi_preprocess_comment(&$variables, $hook) {
   $comment = $variables['elements']['#comment'];
   $node = $variables['elements']['#node'];
   $variables['created'] = format_date($comment->created, 'short');
@@ -148,7 +148,7 @@ function tmemes_preprocess_comment(&$variables, $hook) {
  *   The name of the template being rendered ("block" in this case.)
  */
 
-function tmemes_preprocess_block(&$variables, $hook) {
+function ecigi_preprocess_block(&$variables, $hook) {
   // Add a count to all the blocks in the region.
   $variables['classes_array'][] = 'count-' . $variables['block_id'];
   if ($variables['block']->subject) {
@@ -161,7 +161,7 @@ function tmemes_preprocess_block(&$variables, $hook) {
 }
 
 
-function tmemes_printed_date($date) {
+function ecigi_printed_date($date) {
   $output = '';
   $date = explode(' ', $date);
 
