@@ -169,3 +169,19 @@ function ecigi_printed_date($date) {
   $output .= '<span class="date-last">' . $date[1] . '</span>';
   return $output;
 }
+
+function ecigi_preprocess_openlayers_map(&$vars) {
+  $map = &$vars['map'];
+  switch($vars['map_name']) {
+    case 'geofield_formatter_one_shop':
+      if ($node = menu_get_object()) {;
+        $map['center']['initial']['centerpoint'] = $node->field_map[LANGUAGE_NONE][0]['lon'] . ', '  . $node->field_map[LANGUAGE_NONE][0]['lat'];
+        $js = array('openlayers' => array('maps' => array($map['id'] => $map)));
+        drupal_add_js($js, 'setting');
+      }
+      break;
+
+    default:
+      break;
+  }
+}
